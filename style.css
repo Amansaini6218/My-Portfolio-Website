@@ -31,9 +31,7 @@ nav ul {
   overflow-x: auto;
   scrollbar-width: none; /* Firefox */
 }
-nav ul::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
+
 
 
 nav ul li {
@@ -378,11 +376,8 @@ body.dark-mode .slider {
 body.dark-mode input:checked + .slider {
   background-color: #1e90ff;
 }
-/* Navbar hide on scroll */
-.nav-hidden {
-  transform: translateY(-100%);
-  box-shadow: none !important;
-}
+
+
 /* When nav is visible */
 nav:not(.nav-hidden) {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* soft shadow */
@@ -414,7 +409,6 @@ body.dark-mode .profile-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
   padding: 6px 10px;
   border-radius: 30px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -423,10 +417,3 @@ body.dark-mode .profile-btn {
   margin-right: auto;
 }
 
-/* Mobile responsive tweaks */
-@media (max-width: 768px) {
-  .toggle-container.toggle-bottom {
-    margin-top: 10px;
-    flex-direction: row;
-  }
-}
