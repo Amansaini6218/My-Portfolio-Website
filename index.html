@@ -291,7 +291,25 @@ GitHub used for Store and host repo.
       toggle.checked = true;
     }
   });
+
+// here is navbar hidden feature while scrolling
+  let lastScrollTop = 0;
+  const navbar = document.querySelector('nav');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      navbar.classList.add('nav-hidden'); // hide on scroll down
+    } else {
+      navbar.classList.remove('nav-hidden'); // show on scroll up
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
 </script>
+
+
 
   </body>
 </html>
