@@ -404,3 +404,29 @@ body.dark-mode .profile-btn {
   background: #1e40af;
   color: white;
 }
+/* NAV WRAPPER FLEX */
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile Responsive Fix for Toggle Position */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-container {
+    position: static;
+    margin-top: 10px;
+    align-self: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+}
+
