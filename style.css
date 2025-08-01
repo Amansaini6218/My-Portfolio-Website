@@ -438,36 +438,48 @@ body.dark-mode .profile-btn {
 }
 
 .scroll-arrow {
-  display: none; /* hidden by default */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  padding: 6px 10px;
+  padding: 8px 12px;
+  font-size: 24px;
   cursor: pointer;
-  font-size: 20px;
-  color: #333;
   z-index: 10;
-  transition: background 0.3s ease;
+  color: #333;
+  border-radius: 50%;
+  display: none; /* hide by default */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-
 .scroll-arrow.left {
-  margin-right: 5px;
+  left: 0;
 }
 
 .scroll-arrow.right {
-  margin-left: 5px;
+  right: 0;
 }
 
 @media (max-width: 768px) {
   .scroll-arrow {
-    display: inline-block;
+    display: block;
   }
 
   .nav-scroll-wrapper {
-    justify-content: space-between;
+    padding: 0 30px; /* prevent arrows from overlapping items */
+    position: relative;
   }
 
   #navbar-scroll {
     flex: 1;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #navbar-scroll::-webkit-scrollbar {
+    display: none;
   }
 }
