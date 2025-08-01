@@ -28,7 +28,13 @@ nav ul {
   list-style: none;
   justify-content: center;
   flex-wrap: wrap;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
 }
+nav ul::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
 
 nav ul li {
    margin: 5px 10px;
@@ -120,22 +126,30 @@ ul, #projects p, #experience p {
 
 /* Responsive */
 @media (max-width: 768px) {
-  #home h1 {
-    font-size: 32px;
-  }
-  #home p {
-    font-size: 18px;
-  }
   nav ul {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* allow wrapping if needed */
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 5px 10px;
     gap: 10px;
   }
-  section {
-    margin: 40px 10px;
+
+  nav ul li {
+    flex: 0 0 auto;
+    margin: 0 8px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 4px 8px;
+    display: inline-block;
   }
 }
+
 
 
 .video-gallery {
