@@ -417,3 +417,57 @@ body.dark-mode .profile-btn {
   margin-right: auto;
 }
 
+.nav-scroll-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 100%;
+}
+#navbar-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+#navbar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-arrow {
+  display: none; /* hidden by default */
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+
+.scroll-arrow.left {
+  margin-right: 5px;
+}
+
+.scroll-arrow.right {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .scroll-arrow {
+    display: inline-block;
+  }
+
+  .nav-scroll-wrapper {
+    justify-content: space-between;
+  }
+
+  #navbar-scroll {
+    flex: 1;
+  }
+}
