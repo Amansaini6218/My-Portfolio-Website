@@ -8,19 +8,24 @@
   </head>
   <body>
    <nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-scroll-wrapper">
+    <button class="scroll-arrow left" onclick="scrollNav(-100)">&#9664;</button>
 
-  <!-- ⬇️ Move toggle switch below nav list -->
+    <ul id="navbar-scroll">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="scroll-arrow right" onclick="scrollNav(100)">&#9654;</button>
+  </div>
+
   <div class="toggle-container toggle-bottom">
     <span class="toggle-label"><strong>☀️ / 🌙</strong></span>
     <label class="switch">
@@ -29,6 +34,7 @@
     </label>
   </div>
 </nav>
+
 
 
 
@@ -282,6 +288,16 @@ GitHub used for Store and host repo.
       toggle.checked = true;
     }
   });
+
+  
+  function scrollNav(distance) {
+    const navbar = document.getElementById("navbar-scroll");
+    navbar.scrollBy({ left: distance, behavior: 'smooth' });
+  }
+
+  // Keep your existing dark mode toggle script below
+
+
 
 </script>
 
