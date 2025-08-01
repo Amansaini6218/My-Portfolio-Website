@@ -15,11 +15,12 @@ body {
 /* Navigation */
 nav {
 background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  padding: 15px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+padding: 15px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+position: sticky;
+top: 0;
+z-index: 1000;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 nav ul {
@@ -43,6 +44,7 @@ nav ul li a {
 nav ul li a:hover {
   color: #00b4d8;
 }
+
 
 /* Section Styling */
 section {
@@ -348,4 +350,13 @@ body.dark-mode .slider {
 
 body.dark-mode input:checked + .slider {
   background-color: #1e90ff;
+}
+/* Navbar hide on scroll */
+.nav-hidden {
+  transform: translateY(-100%);
+  box-shadow: none !important;
+}
+/* When nav is visible */
+nav:not(.nav-hidden) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* soft shadow */
 }
