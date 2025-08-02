@@ -336,19 +336,7 @@ GitHub used for Store and host repo.
     fadeEls.forEach(el => observer.observe(el));
   });
 
-  // Sparkle effect on scroll (mobile only)
-  window.addEventListener("scroll", () => {
-    if (window.innerWidth <= 768) {
-      for (let i = 0; i < 3; i++) {
-        const sparkle = document.createElement("div");
-        sparkle.className = "sparkle";
-        sparkle.style.left = Math.random() * window.innerWidth + "px";
-        sparkle.style.top = window.scrollY + Math.random() * window.innerHeight + "px";
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-      }
-    }
-  });
+ 
 
   function scrollNav(distance) {
     const navbar = document.getElementById("navbar-scroll");
