@@ -482,4 +482,73 @@ body.dark-mode .profile-btn {
   #navbar-scroll::-webkit-scrollbar {
     display: none;
   }
+};
+#contact i {
+  margin-right: 8px;
+  color: #0077b6;
 }
+body.dark-mode #contact i {
+  color: #58a6ff;
+}
+ 
+section:hover, .video-item:hover, .service-card:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.profile-btn:hover {
+  background-color: #009ac4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
+}
+
+/* Sparkle Effect */
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #fffdc1, #ffd700);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleMove 1s linear forwards;
+  z-index: 9999;
+}
+@keyframes sparkleMove {
+  0% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.3);
+  }
+}
+
+/* Fade in sections */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Page load fade-in */
+body {
+  animation: bodyFade 1s ease-in-out both;
+}
+@keyframes bodyFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
