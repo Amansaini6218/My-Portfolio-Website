@@ -364,8 +364,8 @@ body.dark-mode .profile-pic {
 
 /* Button fixes (My Profile) */
 body.dark-mode a[href="#projects"] {
-  background: #1e40af;
-  color: white;
+  background: #1e40af00;
+  color: rgb(255, 255, 255);
 }
 
 /* Toggle switch better contrast */
@@ -397,7 +397,7 @@ nav:not(.nav-hidden) {
 /* Dark mode button style */
 body.dark-mode .profile-btn {
   background: #1e40af;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 /* Toggle placed at bottom of nav */
@@ -502,53 +502,3 @@ section:hover, .video-item:hover, .service-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
 }
-
-/* Sparkle Effect */
-.sparkle {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #fffdc1, #ffd700);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: sparkleMove 1s linear forwards;
-  z-index: 9999;
-}
-@keyframes sparkleMove {
-  0% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-40px) scale(0.3);
-  }
-}
-
-/* Fade in sections */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Page load fade-in */
-body {
-  animation: bodyFade 1s ease-in-out both;
-}
-@keyframes bodyFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-
-
