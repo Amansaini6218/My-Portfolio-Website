@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aman | Azure Data Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
   </head>
   <body>
    <nav>
@@ -43,7 +48,10 @@
   <h1>Hi, I'm Aman</h1>
   <p>
     Azure Data Engineer | Professional Video Editor | Hardware & Software
-    Engineer
+    Engineer 
+    <br>
+    | Website Developer |
+    
   </p>
   <a href="#projects" class="profile-btn">My Profile</a>
 </section>
@@ -104,7 +112,7 @@
       <h3>💻 Web Development</h3>
       <p>
         Designing and developing responsive, user-friendly websites using HTML,
-        CSS, JavaScript, and modern tools.
+        CSS, JavaScript,Bootstrap,React and modern Ai tools.
       </p>
     </div>
     <div class="service-card">
@@ -251,25 +259,27 @@ GitHub used for Store and host repo.
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact:</h2>
-      <strong>
-      <p>
-        Email:
-        <a href="mailto:amansaini6218@gmail.com">amansaini6218@gmail.com</a>
-      </p>
-      <p>
-        GitHub: <a href="https://github.com/Amansaini6218">GitHub Profile</a>
-      </p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/aman-saini-b76986264/"
-          >LinkedIn Profile</a
-        >
-         <p>Phone: 9654215755</p>
-      </p>
-      </strong>
-    </section>
+   <section id="contact">
+  <h2>Contacts:</h2>
+  <strong>
+    <p>
+      <i class="fas fa-envelope"></i> Email:
+      <a href="mailto:amansaini6218@gmail.com">amansaini6218@gmail.com</a>
+    </p>
+    <p>
+      <i class="fab fa-github"></i> GitHub:
+      <a href="https://github.com/Amansaini6218" target="_blank">GitHub Profile</a>
+    </p>
+    <p>
+      <i class="fab fa-linkedin"></i> LinkedIn:
+      <a href="https://www.linkedin.com/in/aman-saini-b76986264/" target="_blank">LinkedIn Profile</a>
+    </p>
+    <p>
+      <i class="fab fa-whatsapp"></i> Phone/WhatsApp: +91 9654215755
+    </p>
+  </strong>
+  
+</section>
 
     <script>
   const toggle = document.getElementById('modeToggle');
@@ -289,17 +299,62 @@ GitHub used for Store and host repo.
     }
   });
 
-
- 
   function scrollNav(distance) {
     const navbar = document.getElementById("navbar-scroll");
     navbar.scrollBy({ left: distance, behavior: 'smooth' });
   }
 
-
+  
 
 </script>
+<script>
+  const toggle = document.getElementById('modeToggle');
+  const body = document.body;
 
+  toggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    // Animate sections on scroll
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  });
+
+  // Sparkle effect on scroll (mobile only)
+  window.addEventListener("scroll", () => {
+    if (window.innerWidth <= 768) {
+      for (let i = 0; i < 3; i++) {
+        const sparkle = document.createElement("div");
+        sparkle.className = "sparkle";
+        sparkle.style.left = Math.random() * window.innerWidth + "px";
+        sparkle.style.top = window.scrollY + Math.random() * window.innerHeight + "px";
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 1000);
+      }
+    }
+  });
+
+  function scrollNav(distance) {
+    const navbar = document.getElementById("navbar-scroll");
+    navbar.scrollBy({ left: distance, behavior: 'smooth' });
+  }
+</script>
 
 
   </body>
