@@ -378,7 +378,7 @@ body.dark-mode .profile-btn {
   transition: all 0.3s ease-in-out;
 }
 
-body.dark-mode .profile-btn:hover {
+body.dark-mode.profile-btn:hover {
   background: #1e3a8a;
   color: #ffffff;
   border-color: #76cfff;
@@ -478,7 +478,7 @@ body.dark-mode.profile-btn {
   right: 0;
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .scroll-arrow {
     display: block;
   };
@@ -488,10 +488,6 @@ body.dark-mode.profile-btn {
     padding: 0 30px; /* prevent arrows from overlapping items */
     position: relative;
   }
-
-
-
-
 
   #navbar-scroll {
     flex: 1;
