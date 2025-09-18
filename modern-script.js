@@ -182,10 +182,11 @@ function initTypingAnimation() {
     if (!typingElement) return;
     
     const phrases = [
-        'Azure Data Engineer',
-        'Web Developer',
-        'Creative Professional',
-        'Video Editor'
+        'Azure Cloud Data Engineer',
+        'Website Developer',
+        'Professional Video Editor',
+        'Creative Professional'
+       
     ];
     
     let phraseIndex = 0;
@@ -210,7 +211,7 @@ function initTypingAnimation() {
             charIndex++;
         }
         
-        let speed = isDeleting ? 50 : 100;
+        let speed = isDeleting ? 15 : 55;
         
         if (!isDeleting && charIndex === currentPhrase.length) {
             speed = 1500;
