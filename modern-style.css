@@ -882,7 +882,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4rem;
+    height: 7rem;
 }
 
 .nav-logo .logo-text {
@@ -2129,4 +2129,3 @@ img {
   justify-content: center;
   align-items: center;
 }
-
