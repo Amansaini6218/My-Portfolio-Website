@@ -572,3 +572,50 @@ window.addEventListener('unhandledrejection', function(e) {
     // Could send error to analytics service here
 });
 
+// CLICKABLE PROJECT CARDS FUNCTIONALITY
+function initClickableProjectCards() {
+    const projectCards = document.querySelectorAll('.clickable-card');
+    
+    projectCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on the project link directly
+            if (e.target.closest('.project-link')) {
+                return;
+            }
+            
+            const url = this.getAttribute('data-url');
+            if (url && url !== '#') {
+                // Add click animation
+                this.style.transform = 'translateY(-5px) scale(0.98)';
+                
+                // Reset animation and open link
+                setTimeout(() => {
+                    this.style.transform = '';
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                }, 150);
+            }
+        });
+        
+        // Add keyboard support for accessibility
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `View ${card.querySelector('.project-title').textContent} on GitHub`);
+        
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const url = this.getAttribute('data-url');
+                if (url && url !== '#') {
+                    window.open(url, '_blank', 'noopener,noreferrer');
+                }
+            }
+        });
+    });
+}
+
+// Add this to your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... your existing initialization code ...
+    initClickableProjectCards(); // Add this line
+});
+
