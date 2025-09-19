@@ -2135,3 +2135,148 @@ img {
 .project-card .project-overlay { position:absolute; inset:0; pointer-events:none; }
 /* If an explicit button/icon sits above, re-enable only on it */
 .project-card .project-link { pointer-events:auto; }
+
+/* Clickable Project Cards */
+.clickable-card {
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.clickable-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Prevent double-clicking issues */
+.clickable-card .project-link {
+    pointer-events: none;
+}
+
+.clickable-card:hover .project-link {
+    pointer-events: auto;
+}
+
+/* Add subtle animation on click */
+.clickable-card:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+/* Clickable Project Cards */
+.clickable-card {
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.clickable-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Ensure GitHub icons remain clickable */
+.clickable-card .project-link {
+    pointer-events: auto;
+    z-index: 10;
+    position: relative;
+}
+
+/* Add subtle animation on click */
+.clickable-card:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+/* Fix image display issues */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+/* Fallback styling for missing images */
+.project-image img[src*="placeholder"] {
+    background: var(--color-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+/* Enhanced Project Image Styling */
+.project-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    background: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-normal) var(--ease-standard);
+    display: block;
+}
+
+/* Fallback for broken images */
+.project-image img[alt]:after {
+    content: attr(alt);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-primary);
+    color: white;
+    padding: var(--space-16);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    display: none;
+}
+
+/* Show fallback when image fails to load */
+.project-image img:not([src]), 
+.project-image img[src=""], 
+.project-image img[src="#"] {
+    opacity: 0;
+}
+
+.project-image img:not([src]):after,
+.project-image img[src=""]:after,
+.project-image img[src="#"]:after {
+    display: block;
+}
+
+/* Enhanced hover effects */
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Ensure clickable functionality works */
+.clickable-card {
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.clickable-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.clickable-card:active {
+    transform: translateY(-5px) scale(0.98);
+}
+
+/* Ensure GitHub icons remain clickable */
+.clickable-card .project-link {
+    pointer-events: auto;
+    z-index: 10;
+    position: relative;
+}
