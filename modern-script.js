@@ -571,3 +571,4 @@ window.addEventListener('unhandledrejection', function(e) {
     console.error('Unhandled promise rejection:', e.reason);
     // Could send error to analytics service here
 });
+
