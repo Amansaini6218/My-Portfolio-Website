@@ -2129,3 +2129,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.project-card { display:block; position:relative; text-decoration:none; color:inherit; }
+.project-card .project-image { position:relative; }
+.project-card .project-overlay { position:absolute; inset:0; pointer-events:none; }
+/* If an explicit button/icon sits above, re-enable only on it */
+.project-card .project-link { pointer-events:auto; }
